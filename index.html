@@ -1,0 +1,226 @@
+<extend name="Base/commonindex11"/>
+
+<block name="body">
+	<div id="bodyindex">
+		<div class="banner"><img src="__HOME__/images/add/banner.jpg" alt=""></div>
+		<div class="first-index">
+			<div class="centerDiv ">
+			<!-- 查询和新闻部分 -->
+			<div class="search-combine">
+				<!-- 查询框 -->
+				<div class="combine-title"><h3><i class="fa fa-cube"></i>&nbsp;&nbsp;&nbsp;组合查询</h3></div>
+				<div class="index-search">
+					<if condition="is_login()">
+					<form class="form-horizontal" role="form" action="/mzsjzcpt/Home/Welcome/indexSearchReturnToDatatables" method="get">
+					<else/>
+					<form class="form-horizontal" role="form" action="/mzsjzcpt/Home/Index/indexSearchReturnToDatatables" method="get">
+					</if>
+					<div class='combine-search-box'>
+						<span class='combine-search-basic-item'>
+							<span class='search-item'>
+								<span class='search-item-field'>关键字</span>
+								<span class='search-item-box search-item-keyword'>
+									<input type='text' class='form-control' placeholder='' name='keyword'>
+								</span>
+							</span>
+							<span class='search-item'>
+								<span class='search-item-field' title="灰分">灰分</span>
+								<div class='dropdown menu_dropdown' style='display:inline-block;'>
+									<span class="search-item-box dropdown-toggle" data-toggle="dropdown" id='hf' aria-expanded="false">
+										<span class="search-item-operator">大于</span>
+										<span class="search-item-value" title=""></span>
+										<span class="search-item-caret"><i class="fa fa-angle-down"></i></span>
+									</span>
+									<ul class="search_dropdown_menu search-item-menu-ul dropdown-menu custom-scroll">
+										<div class="menu_operations">
+											<span id="GT" class="menu_operation active" title='大于'>></span>
+											<span id="EGT" class="menu_operation" title='大于等于'>>=</span>
+											<span id="EQ" class="menu_operation" title='等于'>=</span>
+											<span id="ELT" class="menu_operation" title='小于等于'><=</span>
+											<span id="LT" class="menu_operation" title='小于'><</span>
+										</div>
+										<li class="divider"></li>
+										<input placeholder="输入百分比" type="text" class="search-item-text form-control" name='hf' data-input='searchNum'>
+										<input type='hidden' name='hf_bj' value='GT'>
+										<button type="button" class="btn btn-default search-downMenu-button">确定</button>
+									</ul>
+								</div>
+							</span>
+						</span>
+						<span class='combine-search-add-item'>
+							<span class='search-item search-item-not-basic'>
+								<span class='search-item-field' title="挥发分">挥发分</span>
+								<div class='dropdown menu_dropdown' style='display:inline-block;'>
+									<span class="search-item-box dropdown-toggle" data-toggle="dropdown" id='hff'>
+										<span class="search-item-operator">大于</span>
+										<span class="search-item-value" title=""></span>
+										<span class="search-item-caret"><i class="fa fa-angle-down"></i></span>
+									</span>
+									<ul class="search_dropdown_menu search-item-menu-ul dropdown-menu custom-scroll">
+										<div class="menu_operations">
+											<span id="GT" class="menu_operation active" title='大于'>></span>
+											<span id="EGT" class="menu_operation" title='大于等于'>>=</span>
+											<span id="EQ" class="menu_operation" title='等于'>=</span>
+											<span id="ELT" class="menu_operation" title='小于等于'><=</span>
+											<span id="LT" class="menu_operation" title='小于'><</span>
+										</div>
+										<li class="divider"></li>
+										<input placeholder="输入百分比" type="text" class="search-item-text form-control" name='hff' data-input='searchNum'>
+										<input type='hidden' name='hff_bj' value='GT'>
+										<button type="button" class="btn btn-default search-downMenu-button">确定</button>
+									</ul>
+								</div>
+								<div class="search-close"><i class='fa fa-close'></i></div>
+							</span>
+						</span>
+						<span>
+							<span class="search-more-condition-buttons">
+								<span class="search-more-condition dropdown">
+									<span class="more-condition-button dropdown-toggle" data-toggle="dropdown">
+										<a class="btn btn-default">
+											<i class="fa fa-plus"></i>
+										</a>
+									</span>
+									<div class="more-condition-menu dropdown-menu dropdown-menu-right" role="menu">
+										<div>
+											<input type="text" class="more-condition-search" placeholder="搜索">
+											<span class="search-btn" style="display: block;"><i class='fa fa-search'></i></span>
+											<span class="close-btn" style="display: none;"><i class='fa fa-close'></i></span>
+										</div>
+										<ul class="custom-scroll condition-fields-menu" id="j-fields-menu">
+													<li data-id="sf" style="display: list-item;"><a title='水分'><i></i> 水分</a></li>
+													<li data-id="ql" style="display: list-item;"><a title='全硫'><i></i> 全硫</a></li>
+													<li data-id="frl" style="display: list-item;"><a title='热值'><i></i> 热值</a></li>
+													<li data-id="jztz" style="display: list-item;"><a title='焦渣特征'><i></i> 焦渣特征</a></li>
+													<li class='active' data-id="hf" style="display: list-item;"><a title='灰分'><i class='fa fa-check'></i> 灰分</a></li>
+													<li class='active' data-id="hff" style="display: list-item;"><a title='挥发分'><i class='fa fa-check'></i> 挥发分</a></li>
+												</ul>
+									</div>
+								</span>
+								<span class="search-button-span">
+									<button type="submit" class="btn btn-primary searchQ-button-simple">
+										<span class="glyphicon glyphicon-search"></span>
+										查询
+									</button>
+								</span>
+							</span>
+						</span>
+					</div>
+					</form>
+				</div>
+			</div>
+			<div class="news-knowledge">
+				<div class="combine-title"><h3><i class="fa fa-cube">&nbsp;&nbsp;&nbsp;</i>新闻资讯</h3></div>
+				<div class="news-list">
+					<ul>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-5-6/458917.shtml">兖矿贵州能化救护大队参战成贵快铁隧道疑似瓦斯爆炸事故救援纪事</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-6-1/462846.shtml">1-4月鄂尔多斯市就地转化煤炭2870万吨</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-6-1/462828.shtml">2017年河北省134个县市将启动气代煤、电代煤工程</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-5-28/462320.shtml">习近平：推动形成绿色发展方式和生活方式 为人民群众创造良好生产生活环境</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-5-29/462396.shtml">黑龙江困难煤企、钢企获“无还本续贷”政策扶助</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-6-1/462824.shtml">安监总局：六项政策激励标准化煤矿 不达标者及时降级或撤销</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-6-1/462843.shtml">四部委关于大力推进煤矿 安全生产标准化建设工作的通知</a><span class="time">[2017.05.18]</span></li>
+						<li class="item"><a href="http://www.cwestc.com/newshtml/2017-6-1/462786.shtml">国务院同意建立采煤沉陷区综合治理部际联席会议制度</a><span class="time">[2017.05.18]</span></li>
+					</ul>
+				</div>
+				<div class="knowledge">
+					<h3 class="knows-first"><span class="bgc"><i class="fa fa-cube"></i>&nbsp;&nbsp;&nbsp;常用知识<a href="#" class="more">更多>></a></span></h3>
+					<div class="know-ul">
+						<ul class="icon-item">
+							<li class="knows-item"><a class="know-itema" href=""><i class="fa fa-diamond fa-2x"></i><span class="icon-txt">煤质数据</span></a></li>
+							<li class="knows-item"><a class="know-itema" href=""><i class="fa fa-refresh fa-2x"></i><span class="icon-txt">数据转换</span></a></li>
+							<li class="knows-item"><a class="know-itema" href=""><i class="fa fa-cog fa-2x "></i><span class="icon-txt">数据转换</span></a></li>
+							<li class="knows-item"><a class="know-itema" href=""><i class="fa fa-tree fa-2x "></i><span class="icon-txt">数据转换</span></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 最新数据部分 -->
+			<div class="new-data">
+				<div class="data-head"><h3><i class="fa fa-cube"></i>&nbsp;&nbsp;&nbsp;最新数据</h3><a class="more">更多>></a></div>
+				<div class="data-tab">
+					<table>
+						<tr>
+							<th>记录时间</th>
+							<!-- <th>创建用户</th> -->
+							<th>样品源</th>
+							<th>水分(%)</th>
+							<th>灰分(%)</th>
+							<th>挥发分(%)</th>
+							<th>全硫(%)</th>
+							<th>发热量(%)</th>
+						</tr>
+						<volist	name="list" id="vo">
+						<tr>
+							<td>{$vo.zjxgsj}</td>
+							<!-- <td>{$vo.zjxgsj}</td> -->
+							<td>{$vo.ypscsydwmc}</td>
+							<td>{$vo.sf}</td>
+							<td>{$vo.hf}<span class="dw">（{$vo.jzlx_hf}）</span></td></td>
+							<td>{$vo.hff}<span class="dw">（{$vo.jzlx_hff}）</span></td>
+							<td>{$vo.ql}<span class="dw">（{$vo.jzlx_ql}）</span></td>
+							<td>{$vo.frl}<span class="dw">（{$vo.jzlx_frllx},{$vo.jzlx_frlhrhy},{$vo.jzlx_frl}）</span></td>
+						</tr>
+						</volist>
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="gfooter">
+		<div class="footer-box">
+			<div class="item">
+				<ul>
+					<li class="item-title2">中国煤质开放平台</li>
+					<li><a href="javascript:;">关于我们</a></li>
+					<li><a href="javascript:;">加入我们</a></li>
+					<li><a href="javascript:;">网站地图</a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li class="item-title2">服务与支持</li>
+					<li><a href="">注册服务条款</a></li>
+					<li><a href="">意见反馈</a></li>
+					<li><a href="">版权申明</a></li>
+				</ul>
+			</div>
+			<div class="item">
+				<ul>
+					<li class="item-title2">用户中心</li>
+					<li><a href="javascript:;">常见问题</a></li>
+					<li><a href="javascript:;">后台管理</a></li>
+				</ul>
+			</div>
+			<div class="item last-item"><ul>
+					<li class="item-title2">联系我们</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer-foo"><strong>Copyright &copy; 2017 Company.</strong> All rights reserved.</div>
+</block>
+<block name="script">
+	<load href ="__STATIC__/datatables/js/jquery.dataTables.min.js" />
+	<load href ="__STATIC__/datatables/jquery.dataTables.bootstrap.js" />
+	<load href ="__HOME__/js/Index/index.js" />
+
+	<script type="text/javascript">
+		$(function () {
+			$(".dataTables_paginate").parent().removeClass().addClass("col-sm-12");
+			$("#searchindex").click(function(){
+				window.location.href = "{:U('Index/zhindex')}";
+			})
+			$('.main-footer').addClass("footer-center");
+			<!--关于鼠标悬浮旋转图片效果 。。。意外的很有意思呢-->
+			$('.know-itema').hover(function(){
+				$(this).find('i').addClass('fa-spin');
+			},function(){
+				$(this).find('i').removeClass('fa-spin');
+
+			});
+		})
+	</script>
+</block>
